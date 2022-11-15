@@ -1,10 +1,10 @@
-import org.example.Task1;
+import org.example.Tasks;
 
 public class Main {
     public static void main(String[] args) {
 
         System.out.println("****TASK1*****");
-        Task1 t1=new Task1();
+        Tasks t1=new Tasks();
         double[] a=t1.randnum();
         double min=t1.minarr(a);
         double max=t1.maxarr(a);

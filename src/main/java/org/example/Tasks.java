@@ -1,7 +1,7 @@
 package org.example;
 
 
-public class Task1 {
+public class Tasks {
     public double[] randnum()
     {
         double[] arr = new double[10];
