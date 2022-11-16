@@ -1,5 +1,8 @@
 import org.example.Tasks;
 
+import java.util.Arrays;
+import java.util.Iterator;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -23,6 +26,8 @@ public class Main {
         {
             System.out.println(bubblesort[i]);
         }
+
+
         System.out.println("\n****TASK3*****");
         System.out.println("Prime number in range[0,200]");
         int[] arr=new int[201];
@@ -32,6 +37,8 @@ public class Main {
 
         }
         t1.prime(arr);
+
+
         System.out.println("\n****TASK4*****");
         int[] arr2=new int[10];
         int[] arr3=new int[10];
@@ -42,16 +49,28 @@ public class Main {
         {
             System.out.println(arr3[i]);
         }
-        System.out.println("\n****TASK5*****");
-     String s="himaja";
-     t1.CountLetters(s);
-     System.out.println("\n****TASK6*****");
-     System.out.println("Iterator over the Integer array");
-     t1.iter(arr2);
 
-     System.out.println("\n****TASK7*****");
-     String st="himajahim";
-     char unique=t1.countunique(st);
+
+        System.out.println("\n****TASK5*****");
+        String s="himaja";
+        t1.CountLetters(s).forEach((k,v)-> System.out.println( k +" : " + v));;
+
+
+        System.out.println("\n****TASK6*****");
+        System.out.println("Iterator over the Integer array");
+
+        Iterator<Integer> itr= Arrays.stream(arr2).iterator();
+        while(itr.hasNext()) {
+            int even = itr.next();
+            if(even%2==0) {
+                System.out.print(even+" ");
+            }
+        }
+
+
+        System.out.println("\n****TASK7*****");
+        String st="himajahim";
+        char unique=t1.countunique(st);
         if (unique == '0')
         {
             System.out.println("No unique element in string");

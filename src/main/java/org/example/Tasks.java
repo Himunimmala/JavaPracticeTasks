@@ -1,4 +1,6 @@
 package org.example;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Tasks {
@@ -8,7 +10,6 @@ public class Tasks {
         for(int i=0;i< arr.length;i++) {
             arr[i] = Math.random();
         }
-
         return arr;
     }
     public double minarr(double[] arr)
@@ -81,12 +82,12 @@ public class Tasks {
             else{
                 for(j=2;j<=m;j++){
                     if(arr[i]%j==0){
-
                         flag=1;
                         break;
                     }
                 }
-                if(flag==0)  {
+                if(flag==0)
+                {
                     System.out.println(arr[i]);
                 }
             }
@@ -94,7 +95,6 @@ public class Tasks {
     }
     public int[] remove(int a,int[] arr)
     {
-
         int[] arr2 = new int[arr.length - 1];
         for (int i = 0,j=0; i < arr.length; i++) {
 
@@ -106,23 +106,18 @@ public class Tasks {
      return arr2;
     }
 
-    public void CountLetters(String s) {
-        String s1="";
-       for(int i=0;i<s.length();i++)
-       {
-//           if(!s1.contains(s.charAt(i))) {
-               int c = 0;
-               for (int j = 0; j < s.length(); j++) {
-                   if (s.charAt(i) == s.charAt(j)) {
-                       c = c + 1;
-                       s1 = s1 + s.charAt(i);
-                   }
-               }
-               System.out.println("the letter " + s.charAt(i) + " repeats " + c +" times");
-           //}
-
-       }
-
+    public static Map CountLetters(String str) {
+        Map<Character, Integer> res=new HashMap<>();
+        for(char ch:str.toCharArray()){
+            int count=0;
+            for(int i=0;i<str.length();i++){
+                if(ch==str.charAt(i)){
+                    count++;
+                }
+            }
+            res.putIfAbsent(ch,count);
+        }
+        return res;
     }
 
     public void iter(int[] arr2) {
